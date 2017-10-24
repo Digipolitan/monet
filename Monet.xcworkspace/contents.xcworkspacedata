@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Monet.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Samples/MonetSample-iOS/MonetSample-iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Samples/MonetSample-tvOS/MonetSample-tvOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
