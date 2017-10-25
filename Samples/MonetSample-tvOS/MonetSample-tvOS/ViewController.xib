@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="13196" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="DGFrameworkTempalteSample_tvOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="MonetSample_tvOS" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="ViewController"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="button" destination="zOA-pG-NKv" id="tFe-5u-VXX"/>
+                <outlet property="label" destination="JHd-E0-vaa" id="QHj-So-z8y"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Eym-vH-oyN"/>
             </connections>
         </placeholder>
@@ -21,7 +23,29 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-E0-vaa">
+                    <rect key="frame" x="900" y="517" width="120" height="46"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOA-pG-NKv">
+                    <rect key="frame" x="849" y="746" width="223" height="86"/>
+                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                    <state key="normal" title="Random"/>
+                    <connections>
+                        <action selector="btnClickedTvOS:" destination="-1" eventType="primaryActionTriggered" id="5xs-c1-xAe"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zOA-pG-NKv" firstAttribute="top" secondItem="JHd-E0-vaa" secondAttribute="bottom" constant="183" id="7ZK-nf-l10"/>
+                <constraint firstItem="zOA-pG-NKv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hZo-3v-S5h"/>
+                <constraint firstItem="JHd-E0-vaa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mKn-3O-QUs"/>
+                <constraint firstItem="JHd-E0-vaa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qii-NM-03K"/>
+            </constraints>
         </view>
     </objects>
 </document>

@@ -1,77 +1,101 @@
 Monet
 =================================
 
-[![Build Status](https://travis-ci.org/Digipolitan/framework-swift-template.svg?branch=master)](https://travis-ci.org/Digipolitan/framework-swift-template)
+[![Build Status](https://travis-ci.org/Digipolitan/dependency-injector.svg?branch=master)](https://travis-ci.org/Digipolitan/dependency-injector)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Monet.svg)](https://img.shields.io/cocoapods/v/Monet.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Monet.svg?style=flat)](http://cocoadocs.org/docsets/Monet)
 [![Twitter](https://img.shields.io/badge/twitter-@Digipolitan-blue.svg?style=flat)](http://twitter.com/Digipolitan)
 
+Theme manager, to simplify applications appearences.
+
 ## Installation
 
-### Using digipolitan-framework-swift-template-cli
+### CocoaPods
 
-```Shell
-gem install digipolitan-framework-swift-template-cli
+To install Monet with CocoaPods, add the following lines to your `Podfile`.
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0' # or platform :osx, '10.10' if your target is OS X.
+use_frameworks!
+
+pod 'Monet'
 ```
 
-And then execute the follow command
+## The Basics
 
-```Shell
-dg-fst --init
+First you must add into your **Info.plist** the key **Themes** of type **array** with your themes values.
+```xml
+<key>Themes</key>
+<array>
+	<string>custom</string>
+	<string>other</string>
+	<string>default</string>
+</array>
 ```
 
-Check all available options [here](https://github.com/Digipolitan/framework-swift-template-cli)
+After that you need to **create** youre theme template in **json**.<br>
+On this example we create **default.json** which correspond to the default template of the app.
 
-### Manually
+```json
+{
+    "identifier": "com.digipolitan.theme.default",
+    "body": {
+        "backgroundColor": "#00000000",
+        "foregroundColor": "#000000",
+        "font": {
+            "name": "Optima-Bold",
+            "size": 48
+        }
+    },
+    "h1": {
+        "backgroundColor": "#00000000",
+        "foregroundColor": "#363636",
+        "font": {
+            "name": "Optima-Regular",
+            "size": 14
+        }
+    },
+    "placeholder": {
+        "backgroundColor": "#00000000",
+        "foregroundColor": "#ABABAB",
+        "font": {
+            "name": "Optima-Regular",
+            "size": 15
+        }
+    },
+    "input": {
+        "backgroundColor": "#00000000",
+        "foregroundColor": "#000000",
+        "font": {
+            "name": "Optima-Regular",
+            "size": 15
+        }
+    },
+    "action": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundColor": "#FFFFFF",
+        "font": {
+            "name": "Optima-Bold",
+            "size": 15
+        }
+    }
+}
+```
+Then you can set youre default theme like following
 
-First download the zip file and install bundler
-
-```Shell
-[sudo] gem install bundler
-bundle install
+```swift
+let manager = ThemeManager.shared
+manager.current = manager.themes.first(where: { $0.identifier == "com.digipolitan.theme.default" })!]
 ```
 
-Then execute the **install.rb** and follow the instructions
+Then you can just set all the appearence of youre app like following
 
-```Shell
-bundle exec ruby install.rb
+```swift
+self.label.setAppearance(theme.body)
+self.view.setAppearance(theme.action)
 ```
-
-## Features
-
-* Xcode setup and ready to deploy Swift Framework
-* [Travis](https://travis-ci.org) : Travis CI is configure into [.travis.yml](.travis.yml) and ready to execute [Digipolitan CI lanes](https://github.com/Digipolitan/fastlane-ios-ci-framework)
-* [Fastlane](https://fastlane.tools/) : The [Fastfile](fastlane/Fastfile) is configure to download [Digipolitan CI lanes](https://github.com/Digipolitan/fastlane-ios-ci-framework)
-* [Swift Package Manager](https://github.com/apple/swift-package-manager) : The [Package.swift](Package.swift) created without dependencies
-* [CocoaPods](https://cocoapods.org/) : The [Podfile](Podfile) and the [Podspec](Monet.podspec) are created without dependencies
-* [SwifLint](https://github.com/realm/SwiftLint) : The [.swiftlint.yml](.swiftlint.yml) is created and a run script is added to **Xcode Build Phases** to run for each build
-* [RubyGems](https://rubygems.org/) : The [Gemfile](Gemfile) contains ruby dependencies such as Fastlane, run `bundle install` to install these dependencies into your machine
-* [Homebrew](http://brew.sh/index_fr.html) : The [Brewfile](Brewfile) contains non-ruby dependencies such as git-flow, run `brew bundle` to install these dependencies into your machine
-
-## How to deploy ?
-
-First install deployment dependencies
-```Shell
-bundle install && brew bundle
-```
-
-Run the following lane to start a new release version on git :
-```Shell
-fastlane start_framework_release
-```
-This lane is a part of [Digipolitan lanes](https://github.com/Digipolitan/fastlane-ios-framework)
-
-Check if everything is OK, after that publish the new release version on git
-```Shell
-fastlane publish_framework_release
-```
-This lane is a part of [Digipolitan lanes](https://github.com/Digipolitan/fastlane-ios-framework)
-
-After that 2 options are available :
-- If you keep Travis CI : Travis will run tests and will deploy CocoaPods and GitHub release
-- Otherwise you must run lanes yourself `framework_deploy_cocoapods` and `framework_deploy_github` part of [Digipolitan lanes](https://github.com/Digipolitan/fastlane-ios-framework)
-
 
 ## Contributing
 

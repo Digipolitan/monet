@@ -2,20 +2,17 @@
 //  TextAppearance.swift
 //  Monet
 //
-//  Created by David LINHARES on 24/10/2017.
+//  Created by Benoit BRIATTE on 24/10/2017.
 //  Copyright © 2017 Digipolitan. All rights reserved.
 //
 
 import UIKit
 import ObjectMapper
 
-public struct TextAppearance: Mappable {
-    public let backgroundColor: UIColor
-    public let foregroundColor: UIColor
-    public let font: UIFont
-    public static let backgroundColorTransformer: HexColorTransform = {
-        return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
-    }()
+public class TextAppearance: ViewAppearance {
+    public let foregroundColor: UIColor?
+    public let font: UIFont?
+
     public static let foregroundColorTransformer: HexColorTransform = {
         return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
     }()
@@ -23,80 +20,105 @@ public struct TextAppearance: Mappable {
         return FontTransform()
     }()
 
-    public enum Consts {
-        public static let backgroundColor: UIColor = .clear
-        public static let foregroundColor: UIColor = .black
-        public static let font: UIFont = .preferredFont(forTextStyle: .body)
-    }
-
-    public init(backgroundColor: UIColor = Consts.backgroundColor, foregroundColor: UIColor = Consts.foregroundColor, font: UIFont = Consts.font) {
-        self.backgroundColor = backgroundColor
+    public init(backgroundColor: UIColor? = nil, tintColor: UIColor? = nil, border: BorderAppearance? = nil, foregroundColor: UIColor? = nil, font: UIFont? = nil) {
         self.foregroundColor = foregroundColor
         self.font = font
+        super.init(backgroundColor: backgroundColor, tintColor: tintColor, border: border)
     }
 
-    public init?(map: Map) {
+    public required init(map: Map) throws {
         let selfClass = type(of: self)
-        self.backgroundColor = (try? map.value("backgroundColor", using: selfClass.backgroundColorTransformer)) ?? Consts.backgroundColor
-        self.foregroundColor = (try? map.value("foregroundColor", using: selfClass.foregroundColorTransformer)) ?? Consts.foregroundColor
-        self.font = (try? map.value("font", using: selfClass.fontTransformer)) ?? Consts.font
+        self.foregroundColor = try? map.value("foregroundColor", using: selfClass.foregroundColorTransformer)
+        self.font = try? map.value("font", using: selfClass.fontTransformer)
+        try super.init(map: map)
     }
 
-    public mutating func mapping(map: Map) {
+    public override func mapping(map: Map) {
+        super.mapping(map: map)
         let selfClass = type(of: self)
-        self.backgroundColor >>> (map["id"], selfClass.backgroundColorTransformer)
-        self.foregroundColor >>> (map["email"], selfClass.foregroundColorTransformer)
-        self.font >>> (map["phone_number"], selfClass.fontTransformer)
-    }
-}
-
-extension TextAppearance {
-
-    public func reverse() -> TextAppearance {
-        return TextAppearance(backgroundColor: self.foregroundColor, foregroundColor: self.backgroundColor, font: self.font)
+        self.foregroundColor >>> (map["foregroundColor"], selfClass.foregroundColorTransformer)
+        self.font >>> (map["font"], selfClass.fontTransformer)
     }
 }
 
 public extension UILabel {
 
-    public func setTextAppearance(_ textAppearance: TextAppearance) {
-        self.backgroundColor = textAppearance.backgroundColor
-        self.textColor = textAppearance.foregroundColor
-        self.font = textAppearance.font
+    public func setAppearance(_ textAppearance: TextAppearance?) {
+        super.setAppearance(textAppearance)
+        guard let appearance = textAppearance else {
+            return
+        }
+        if let fc = appearance.foregroundColor {
+            self.textColor = fc
+        }
+        if let f = appearance.font {
+            self.font = f
+        }
     }
 }
 
 public extension UIButton {
 
-    public func setTextAppearance(_ textAppearance: TextAppearance) {
-        self.backgroundColor = textAppearance.backgroundColor
-        self.setTitleColor(textAppearance.foregroundColor, for: .normal)
-        self.titleLabel?.font = textAppearance.font
+    public func setAppearance(_ textAppearance: TextAppearance?) {
+        super.setAppearance(textAppearance)
+        guard let appearance = textAppearance else {
+            return
+        }
+        if let fc = appearance.foregroundColor {
+            self.setTitleColor(fc, for: .normal)
+        }
+        if let f = appearance.font {
+            self.titleLabel?.font = f
+        }
     }
 }
 
 public extension UITextField {
 
-    public func setTextAppearance(_ textAppearance: TextAppearance) {
-        self.backgroundColor = textAppearance.backgroundColor
-        self.textColor = textAppearance.foregroundColor
-        self.font = textAppearance.font
+    public func setAppearance(_ textAppearance: TextAppearance?) {
+        super.setAppearance(textAppearance)
+        guard let appearance = textAppearance else {
+            return
+        }
+        if let fc = appearance.foregroundColor {
+            self.textColor = fc
+        }
+        if let f = appearance.font {
+            self.font = f
+        }
     }
 
-    public func setPlaceholderAppearance(_ textAppearance: TextAppearance, placeholder: String) {
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
-            NSAttributedStringKey.foregroundColor: textAppearance.foregroundColor,
-            NSAttributedStringKey.backgroundColor: textAppearance.backgroundColor,
-            NSAttributedStringKey.font: textAppearance.font
-        ])
+    public func setPlaceholderAppearance(_ textAppearance: TextAppearance?, placeholder: String) {
+        if let appearance = textAppearance {
+            var attributes: [NSAttributedStringKey: Any] = [:]
+            if let fc = appearance.foregroundColor {
+                attributes[NSAttributedStringKey.foregroundColor] = fc
+            }
+            if let bc = appearance.backgroundColor {
+                attributes[NSAttributedStringKey.backgroundColor] = bc
+            }
+            if let f = appearance.font {
+                attributes[NSAttributedStringKey.font] = f
+            }
+            self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
+        } else {
+            self.placeholder = placeholder
+        }
     }
 }
 
 public extension UITextView {
 
-    public func setTextAppearance(_ textAppearance: TextAppearance) {
-        self.backgroundColor = textAppearance.backgroundColor
-        self.textColor = textAppearance.foregroundColor
-        self.font = textAppearance.font
+    public func setAppearance(_ textAppearance: TextAppearance?) {
+        super.setAppearance(textAppearance)
+        guard let appearance = textAppearance else {
+            return
+        }
+        if let fc = appearance.foregroundColor {
+            self.textColor = fc
+        }
+        if let f = appearance.font {
+            self.font = f
+        }
     }
 }

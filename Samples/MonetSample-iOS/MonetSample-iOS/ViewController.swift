@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
 
     func setupUI(theme: Theme) {
-        self.label.setTextAppearance(theme.body)
-        self.view.set
+        self.label.setAppearance(theme.body)
+        self.view.setAppearance(theme.action)
+        self.title = theme.identifier
     }
 
     override func viewDidLoad() {

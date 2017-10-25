@@ -28,6 +28,7 @@
 	</array>
 	<key>Themes</key>
 	<array>
+		<string>custom</string>
 		<string>other</string>
 		<string>default</string>
 	</array>

@@ -1,11 +1,12 @@
+
 {
-    "identifier": "com.digipolitan.theme.default",
+    "identifier": "com.digipolitan.theme.custom",
     "body": {
         "backgroundColor": "#00000000",
         "foregroundColor": "#000000",
         "font": {
             "name": "Optima-Bold",
-            "size": 48
+            "size": 12
         }
     },
     "h1": {
@@ -33,7 +34,7 @@
         }
     },
     "action": {
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "#D59A1E",
         "foregroundColor": "#FFFFFF",
         "font": {
             "name": "Optima-Bold",

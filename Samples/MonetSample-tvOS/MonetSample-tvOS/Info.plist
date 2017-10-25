@@ -24,6 +24,12 @@
 	<array>
 		<string>arm64</string>
 	</array>
+	<key>Themes</key>
+	<array>
+		<string>default</string>
+		<string>other</string>
+		<string>custom</string>
+	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Automatic</string>
 </dict>
