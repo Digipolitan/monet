@@ -1,7 +1,7 @@
 Monet
 =================================
 
-[![Build Status](https://travis-ci.org/Digipolitan/dependency-injector.svg?branch=master)](https://travis-ci.org/Digipolitan/dependency-injector)
+[![Build Status](https://travis-ci.org/Digipolitan/dependency-injector.svg?branch=master)](https://travis-ci.org/Digipolitan/monet)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Monet.svg)](https://img.shields.io/cocoapods/v/Monet.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Monet.svg?style=flat)](http://cocoadocs.org/docsets/Monet)
@@ -25,7 +25,7 @@ pod 'Monet'
 
 ## The Basics
 
-First you must add into your **Info.plist** the key **Themes** of type **array** with your themes values.
+First you must add into your **Info.plist** the key **Themes** of type **array** with your themes names.
 ```xml
 <key>Themes</key>
 <array>
@@ -83,14 +83,17 @@ On this example we create **default.json** which correspond to the default templ
     }
 }
 ```
-Then you can set youre default theme like following
+Then you can set your default theme like following
 
 ```swift
 let manager = ThemeManager.shared
-manager.current = manager.themes.first(where: { $0.identifier == "com.digipolitan.theme.default" })!]
+guard let defaultTheme = manager.themes.first(where: { $0.identifier == "com.digipolitan.theme.default" }) else {
+	return
+}
+manager.current = defaultTheme
 ```
 
-Then you can just set all the appearence of youre app like following
+Then you can just set all the appearence of your app like following
 
 ```swift
 self.label.setAppearance(theme.body)
