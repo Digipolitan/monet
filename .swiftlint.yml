@@ -4,3 +4,5 @@ excluded:
 
 line_length: 200
 file_length: 500
+identifier_name:
+  min_length: 2
