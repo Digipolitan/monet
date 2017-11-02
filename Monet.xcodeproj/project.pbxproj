@@ -27,6 +27,12 @@
 		A3169E781DE083D900BABAFD /* Monet.h in Headers */ = {isa = PBXBuildFile; fileRef = A3169E751DE083D900BABAFD /* Monet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A38EF2CA1DECF97000637484 /* MonetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38EF2C71DECF97000637484 /* MonetTests.swift */; };
 		A38EF2CB1DECF97000637484 /* MonetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38EF2C71DECF97000637484 /* MonetTests.swift */; };
+		A3A466AE1FAB830600509EE1 /* UIColor+RGB255.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466AD1FAB830600509EE1 /* UIColor+RGB255.swift */; };
+		A3A466AF1FAB830600509EE1 /* UIColor+RGB255.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466AD1FAB830600509EE1 /* UIColor+RGB255.swift */; };
+		A3A466B11FAB832600509EE1 /* UIColor+UIControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466B01FAB832600509EE1 /* UIColor+UIControlState.swift */; };
+		A3A466B21FAB832600509EE1 /* UIColor+UIControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466B01FAB832600509EE1 /* UIColor+UIControlState.swift */; };
+		A3A466B41FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466B31FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift */; };
+		A3A466B51FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A466B31FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift */; };
 		F08B78C560CE15D29983917F /* Pods_Tests_MonetTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C2F6F8BBE9634556E13CF5 /* Pods_Tests_MonetTests_iOS.framework */; };
 		FDBB18C7B9575A4B3AB565D0 /* Pods_Frameworks_Monet_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EE68D6BAB8201B6A1BA471 /* Pods_Frameworks_Monet_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +77,9 @@
 		A3169E141DE072C800BABAFD /* MonetTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonetTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169E751DE083D900BABAFD /* Monet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monet.h; sourceTree = "<group>"; };
 		A38EF2C71DECF97000637484 /* MonetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonetTests.swift; sourceTree = "<group>"; };
+		A3A466AD1FAB830600509EE1 /* UIColor+RGB255.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB255.swift"; sourceTree = "<group>"; };
+		A3A466B01FAB832600509EE1 /* UIColor+UIControlState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+UIControlState.swift"; sourceTree = "<group>"; };
+		A3A466B31FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+UIImageRepresentation.swift"; sourceTree = "<group>"; };
 		A8098814EB15D9D2072F4A34 /* Pods_Frameworks_Monet_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frameworks_Monet_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C2F6F8BBE9634556E13CF5 /* Pods_Tests_MonetTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests_MonetTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFADF94759DD43A26AF8F681 /* Pods-Frameworks-Monet-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frameworks-Monet-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frameworks-Monet-tvOS/Pods-Frameworks-Monet-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +172,9 @@
 				7F0BF38E1F9F9A5200426A74 /* ThemeError.swift */,
 				7F0BF3901F9F9A5200426A74 /* ThemeManager.swift */,
 				7F0BF3911F9F9A5200426A74 /* ViewAppearance.swift */,
+				A3A466AD1FAB830600509EE1 /* UIColor+RGB255.swift */,
+				A3A466B01FAB832600509EE1 /* UIColor+UIControlState.swift */,
+				A3A466B31FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift */,
 				A3169E751DE083D900BABAFD /* Monet.h */,
 				A3169DCC1DE0629100BABAFD /* Info.plist */,
 			);
@@ -598,11 +610,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0BF3941F9F9A5200426A74 /* ThemeError.swift in Sources */,
+				A3A466AE1FAB830600509EE1 /* UIColor+RGB255.swift in Sources */,
 				7F0BF3961F9F9A5200426A74 /* FontTransform.swift in Sources */,
 				7F0BF39C1F9F9A5200426A74 /* TextAppearance.swift in Sources */,
+				A3A466B41FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift in Sources */,
 				7F0BF39E1F9F9A5200426A74 /* Theme.swift in Sources */,
 				7F0BF39A1F9F9A5200426A74 /* ViewAppearance.swift in Sources */,
 				7F0BF3981F9F9A5200426A74 /* ThemeManager.swift in Sources */,
+				A3A466B11FAB832600509EE1 /* UIColor+UIControlState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,11 +634,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0BF3951F9F9A5200426A74 /* ThemeError.swift in Sources */,
+				A3A466AF1FAB830600509EE1 /* UIColor+RGB255.swift in Sources */,
 				7F0BF3971F9F9A5200426A74 /* FontTransform.swift in Sources */,
 				7F0BF39D1F9F9A5200426A74 /* TextAppearance.swift in Sources */,
+				A3A466B51FAB836B00509EE1 /* UIColor+UIImageRepresentation.swift in Sources */,
 				7F0BF39F1F9F9A5200426A74 /* Theme.swift in Sources */,
 				7F0BF39B1F9F9A5200426A74 /* ViewAppearance.swift in Sources */,
 				7F0BF3991F9F9A5200426A74 /* ThemeManager.swift in Sources */,
+				A3A466B21FAB832600509EE1 /* UIColor+UIControlState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

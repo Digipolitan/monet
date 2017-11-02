@@ -107,9 +107,9 @@
 				A30D64A41E0D7BC200A3CE45 /* ViewController.xib */,
 				A30D64961E0D7B2A00A3CE45 /* Assets.xcassets */,
 				A30D64981E0D7B2A00A3CE45 /* Info.plist */,
-				7F0BF3A21F9F9E5200426A74 /* custom.json */,
 				7F0BF3A31F9F9E5200426A74 /* default.json */,
 				7F0BF3A41F9F9E5200426A74 /* other.json */,
+				7F0BF3A21F9F9E5200426A74 /* custom.json */,
 			);
 			path = "MonetSample-tvOS";
 			sourceTree = "<group>";
