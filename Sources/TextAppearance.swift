@@ -59,13 +59,40 @@ public extension UILabel {
 
 public extension UIButton {
 
+    public struct AppearanceOptions {
+        public let autoAdjustBackgroundColor: Bool
+        public let autoAdjustForegroundColor: Bool
+
+        public init(autoAdjustBackgroundColor: Bool = true, autoAdjustForegroundColor: Bool = true) {
+            self.autoAdjustBackgroundColor = autoAdjustBackgroundColor
+            self.autoAdjustForegroundColor = autoAdjustForegroundColor
+        }
+    }
+
     public func setAppearance(_ textAppearance: TextAppearance?) {
+        self.setAppearance(textAppearance, options: AppearanceOptions())
+    }
+
+    public func setAppearance(_ textAppearance: TextAppearance?, options: AppearanceOptions) {
         super.setAppearance(textAppearance)
         guard let appearance = textAppearance else {
             return
         }
+
+        if self.buttonType == .custom && options.autoAdjustBackgroundColor,
+            let backgroundColor = appearance.backgroundColor {
+            self.backgroundColor = .clear
+            self.setBackgroundImage(backgroundColor.imageRepresentation, for: .normal)
+            self.setBackgroundImage(backgroundColor.highlighted.imageRepresentation, for: .highlighted)
+            self.setBackgroundImage(backgroundColor.disabled.imageRepresentation, for: .disabled)
+        }
+
         if let fc = appearance.foregroundColor {
             self.setTitleColor(fc, for: .normal)
+            if self.buttonType == .custom && options.autoAdjustForegroundColor {
+                self.setTitleColor(fc.highlighted, for: .highlighted)
+                self.setTitleColor(fc.disabled, for: .disabled)
+            }
         }
         if let f = appearance.font {
             self.titleLabel?.font = f

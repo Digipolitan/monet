@@ -30,10 +30,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOA-pG-NKv">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOA-pG-NKv">
                     <rect key="frame" x="849" y="746" width="223" height="86"/>
                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                    <state key="normal" title="Random"/>
+                    <state key="normal" title="Random">
+                        <color key="titleColor" red="0.5" green="0.31411830359999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
                     <connections>
                         <action selector="btnClickedTvOS:" destination="-1" eventType="primaryActionTriggered" id="5xs-c1-xAe"/>
                     </connections>

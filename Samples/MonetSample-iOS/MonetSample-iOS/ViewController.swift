@@ -16,7 +16,8 @@ class ViewController: UIViewController {
 
     func setupUI(theme: Theme) {
         self.label.setAppearance(theme.body)
-        self.view.setAppearance(theme.action)
+        self.view.setAppearance(theme.scene)
+        self.button.setAppearance(theme.action)
         self.title = theme.identifier
     }
 
