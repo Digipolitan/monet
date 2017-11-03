@@ -39,6 +39,20 @@ public class TextAppearance: ViewAppearance {
         self.foregroundColor >>> (map["foregroundColor"], selfClass.foregroundColorTransformer)
         self.font >>> (map["font"], selfClass.fontTransformer)
     }
+
+    public var attributes: [NSAttributedStringKey: Any] {
+        var attributes: [NSAttributedStringKey: Any] = [:]
+        if let fc = self.foregroundColor {
+            attributes[NSAttributedStringKey.foregroundColor] = fc
+        }
+        if let bc = self.backgroundColor {
+            attributes[NSAttributedStringKey.backgroundColor] = bc
+        }
+        if let f = self.font {
+            attributes[NSAttributedStringKey.font] = f
+        }
+        return attributes
+    }
 }
 
 public extension UILabel {
@@ -117,17 +131,7 @@ public extension UITextField {
 
     public func setPlaceholderAppearance(_ textAppearance: TextAppearance?, placeholder: String) {
         if let appearance = textAppearance {
-            var attributes: [NSAttributedStringKey: Any] = [:]
-            if let fc = appearance.foregroundColor {
-                attributes[NSAttributedStringKey.foregroundColor] = fc
-            }
-            if let bc = appearance.backgroundColor {
-                attributes[NSAttributedStringKey.backgroundColor] = bc
-            }
-            if let f = appearance.font {
-                attributes[NSAttributedStringKey.font] = f
-            }
-            self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
+            self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: appearance.attributes)
         } else {
             self.placeholder = placeholder
         }
