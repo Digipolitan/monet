@@ -62,7 +62,6 @@ On this example we create **default.json** which correspond to the default templ
 {
     "identifier": "com.digipolitan.theme.default",
     "body": {
-        "backgroundColor": "#00000000",
         "foregroundColor": "#000000",
         "font": {
             "name": "Optima-Bold",
@@ -70,7 +69,6 @@ On this example we create **default.json** which correspond to the default templ
         }
     },
     "h1": {
-        "backgroundColor": "#00000000",
         "foregroundColor": "#363636",
         "font": {
             "name": "Optima-Regular",
@@ -78,7 +76,6 @@ On this example we create **default.json** which correspond to the default templ
         }
     },
     "placeholder": {
-        "backgroundColor": "#00000000",
         "foregroundColor": "#ABABAB",
         "font": {
             "name": "Optima-Regular",
@@ -86,7 +83,6 @@ On this example we create **default.json** which correspond to the default templ
         }
     },
     "input": {
-        "backgroundColor": "#00000000",
         "foregroundColor": "#000000",
         "font": {
             "name": "Optima-Regular",
@@ -94,7 +90,7 @@ On this example we create **default.json** which correspond to the default templ
         }
     },
     "action": {
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "#000000",
         "foregroundColor": "#FFFFFF",
         "font": {
             "name": "Optima-Bold",
