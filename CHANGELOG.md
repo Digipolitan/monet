@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.2](https://github.com/Digipolitan/monet/releases/tag/v1.1.2)
+
+update pbxproj, remove spm & update readme
+
+---
+
 ## [1.1.1](https://github.com/Digipolitan/monet/releases/tag/v1.1.1)
 
 Add attributes property to TextAppearance
