@@ -825,7 +825,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1146950D69C3F7B37FFEE5B1 /* Pods-Tests-MonetTests-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -839,7 +838,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B1E2CCA7DCAA12E69C19078 /* Pods-Tests-MonetTests-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -898,7 +896,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8FDA4C68D566EA9DE7C7C78 /* Pods-Tests-MonetTests-tvOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -914,7 +911,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E308B0975F7171E5C4A74DBC /* Pods-Tests-MonetTests-tvOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = Tests/Info.plist;
