@@ -40,16 +40,16 @@ public class TextAppearance: ViewAppearance {
         self.font >>> (map["font"], selfClass.fontTransformer)
     }
 
-    public var attributes: [NSAttributedStringKey: Any] {
-        var attributes: [NSAttributedStringKey: Any] = [:]
+    public var attributes: [NSAttributedString.Key: Any] {
+        var attributes: [NSAttributedString.Key: Any] = [:]
         if let fc = self.foregroundColor {
-            attributes[NSAttributedStringKey.foregroundColor] = fc
+            attributes[NSAttributedString.Key.foregroundColor] = fc
         }
         if let bc = self.backgroundColor {
-            attributes[NSAttributedStringKey.backgroundColor] = bc
+            attributes[NSAttributedString.Key.backgroundColor] = bc
         }
-        if let f = self.font {
-            attributes[NSAttributedStringKey.font] = f
+        if let font = self.font {
+            attributes[NSAttributedString.Key.font] = font
         }
         return attributes
     }
@@ -62,11 +62,11 @@ public extension UILabel {
         guard let appearance = textAppearance else {
             return
         }
-        if let fc = appearance.foregroundColor {
-            self.textColor = fc
+        if let color = appearance.foregroundColor {
+            self.textColor = color
         }
-        if let f = appearance.font {
-            self.font = f
+        if let font = appearance.font {
+            self.font = font
         }
     }
 }
@@ -101,15 +101,15 @@ public extension UIButton {
             self.setBackgroundImage(backgroundColor.disabled.imageRepresentation, for: .disabled)
         }
 
-        if let fc = appearance.foregroundColor {
-            self.setTitleColor(fc, for: .normal)
+        if let color = appearance.foregroundColor {
+            self.setTitleColor(color, for: .normal)
             if self.buttonType == .custom && options.autoAdjustForegroundColor {
-                self.setTitleColor(fc.highlighted, for: .highlighted)
-                self.setTitleColor(fc.disabled, for: .disabled)
+                self.setTitleColor(color.highlighted, for: .highlighted)
+                self.setTitleColor(color.disabled, for: .disabled)
             }
         }
-        if let f = appearance.font {
-            self.titleLabel?.font = f
+        if let font = appearance.font {
+            self.titleLabel?.font = font
         }
     }
 }
@@ -121,11 +121,11 @@ public extension UITextField {
         guard let appearance = textAppearance else {
             return
         }
-        if let fc = appearance.foregroundColor {
-            self.textColor = fc
+        if let color = appearance.foregroundColor {
+            self.textColor = color
         }
-        if let f = appearance.font {
-            self.font = f
+        if let font = appearance.font {
+            self.font = font
         }
     }
 
@@ -145,11 +145,11 @@ public extension UITextView {
         guard let appearance = textAppearance else {
             return
         }
-        if let fc = appearance.foregroundColor {
-            self.textColor = fc
+        if let color = appearance.foregroundColor {
+            self.textColor = color
         }
-        if let f = appearance.font {
-            self.font = f
+        if let font = appearance.font {
+            self.font = font
         }
     }
 }
