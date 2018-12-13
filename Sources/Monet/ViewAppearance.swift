@@ -83,22 +83,22 @@ public extension UIView {
         guard let appearance = viewAppearance else {
             return
         }
-        if let bc = appearance.backgroundColor {
-            self.backgroundColor = bc
+        if let backgroundColor = appearance.backgroundColor {
+            self.backgroundColor = backgroundColor
         }
-        if let tc = appearance.tintColor {
-            self.tintColor = tc
+        if let tintColor = appearance.tintColor {
+            self.tintColor = tintColor
         }
         if let border = appearance.border {
             self.clipsToBounds = true
-            if let c = border.color {
-                self.layer.borderColor = c.cgColor
+            if let color = border.color {
+                self.layer.borderColor = color.cgColor
             }
-            if let w = border.width {
-                self.layer.borderWidth = CGFloat(w)
+            if let width = border.width {
+                self.layer.borderWidth = CGFloat(width)
             }
-            if let cr = border.cornerRadius {
-                self.layer.cornerRadius = CGFloat(cr)
+            if let corner = border.cornerRadius {
+                self.layer.cornerRadius = CGFloat(corner)
             }
         }
     }

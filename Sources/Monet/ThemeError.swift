@@ -9,6 +9,8 @@
 import Foundation
 
 public enum ThemeError: Error {
+    // swiftlint:disable identifier_name
     case noSuchTheme(file: String)
+    // swiftlint:enable identifier_name
     case malformatedTheme
 }
