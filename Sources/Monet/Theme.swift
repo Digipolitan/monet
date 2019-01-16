@@ -12,65 +12,37 @@ public class Theme: ImmutableMappable {
 
     public let identifier: String
 
-    public let scene: ViewAppearance?
+    public let colors: [String: UIColor]
 
-    public let body: TextAppearance?
+    public let fonts: [String: UIFont]
 
-    public let h1: TextAppearance?
+    public let appearances: AppearanceRegistry
 
-    public let h2: TextAppearance?
-
-    public let h3: TextAppearance?
-
-    public let placeholder: TextAppearance?
-
-    public let input: TextAppearance?
-
-    public let action: TextAppearance?
-
-    public let error: TextAppearance?
-
-    public let success: TextAppearance?
-
-    public convenience required init(file: String, bundle: Bundle = .main) throws {
-        guard let url = bundle.url(forResource: file, withExtension: file.hasSuffix("json") ? nil : "json") else {
-            throw ThemeError.noSuchTheme(file: file)
-        }
-        guard
-            let data = try? Data(contentsOf: url),
-            let object = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-            let json = object as? [String: Any] else {
-                throw ThemeError.malformatedTheme
-        }
-        try self.init(map: Map(mappingType: .fromJSON, JSON: json))
+    public required init(identifier: String,
+                         colors: [String: UIColor],
+                         fonts: [String: UIFont],
+                         appearances: AppearanceRegistry) {
+        self.identifier = identifier
+        self.colors = colors
+        self.fonts = fonts
+        self.appearances = appearances
     }
 
-    public required init(map: Map) throws {
-        self.identifier = try map.value("identifier")
-        self.scene = try? map.value("scene")
-        self.body = try? map.value("body")
-        self.h1 = try? map.value("h1")
-        self.placeholder = try? map.value("placeholder")
-        self.input = try? map.value("input")
-        self.h2 = try? map.value("h2")
-        self.h3 = try? map.value("h3")
-        self.action = try? map.value("action")
-        self.error = try? map.value("error")
-        self.success = try? map.value("success")
+    public convenience required init(map: Map) throws {
+        let colors: [String: UIColor] = (try? map.value(Monet.Alias.colors, using: Monet.Transformers.colorTransformer)) ?? [:]
+        let fonts: [String: UIFont] = (try? map.value(Monet.Alias.fonts, using: Monet.Transformers.fontTransformer)) ?? [:]
+        map.context = Monet.Context(colors: colors, fonts: fonts)
+        self.init(identifier: try map.value("identifier"),
+                  colors: colors,
+                  fonts: fonts,
+                  appearances: try map.value("appearances"))
     }
 
     public func mapping(map: Map) {
         self.identifier >>> map["identifier"]
-        self.scene >>> map["scene"]
-        self.body >>> map["body"]
-        self.h1 >>> map["h1"]
-        self.placeholder >>> map["placeholder"]
-        self.input >>> map["input"]
-        self.h2 >>> map["h2"]
-        self.h3 >>> map["h3"]
-        self.action >>> map["action"]
-        self.error >>> map["error"]
-        self.success >>> map["success"]
+        self.colors >>> (map[Monet.Alias.colors], using: Monet.Transformers.colorTransformer)
+        self.fonts >>> (map[Monet.Alias.fonts], using: Monet.Transformers.fontTransformer)
+        self.appearances >>> map["appearances"]
     }
 }
 
@@ -78,5 +50,20 @@ extension Theme: CustomStringConvertible {
 
     public var description: String {
         return self.toJSONString() ?? "{}"
+    }
+}
+
+extension Theme {
+    public static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
+        guard let url = bundle.url(forResource: named, withExtension: named.hasSuffix("json") ? nil : "json") else {
+            throw MonetError.noSuchTheme(file: named)
+        }
+        guard
+            let data = try? Data(contentsOf: url),
+            let object = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+            let json = object as? [String: Any] else {
+                throw MonetError.malformatedTheme
+        }
+        return try self.init(map: Map(mappingType: .fromJSON, JSON: json))
     }
 }

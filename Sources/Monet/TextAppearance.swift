@@ -13,13 +13,6 @@ public class TextAppearance: ViewAppearance {
     public let foregroundColor: UIColor?
     public let font: UIFont?
 
-    public static let foregroundColorTransformer: HexColorTransform = {
-        return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
-    }()
-    public static let fontTransformer: FontTransform = {
-        return FontTransform()
-    }()
-
     public init(backgroundColor: UIColor? = nil, tintColor: UIColor? = nil, border: BorderAppearance? = nil, foregroundColor: UIColor? = nil, font: UIFont? = nil) {
         self.foregroundColor = foregroundColor
         self.font = font
@@ -27,17 +20,15 @@ public class TextAppearance: ViewAppearance {
     }
 
     public required init(map: Map) throws {
-        let selfClass = type(of: self)
-        self.foregroundColor = try? map.value("foregroundColor", using: selfClass.foregroundColorTransformer)
-        self.font = try? map.value("font", using: selfClass.fontTransformer)
+        self.foregroundColor = map.color(key: "foregroundColor")
+        self.font = map.font(key: "font")
         try super.init(map: map)
     }
 
     public override func mapping(map: Map) {
         super.mapping(map: map)
-        let selfClass = type(of: self)
-        self.foregroundColor >>> (map["foregroundColor"], selfClass.foregroundColorTransformer)
-        self.font >>> (map["font"], selfClass.fontTransformer)
+        self.foregroundColor >>> (map["foregroundColor"], Monet.Transformers.colorTransformer)
+        self.font >>> (map["font"], Monet.Transformers.fontTransformer)
     }
 
     public var attributes: [NSAttributedString.Key: Any] {
@@ -56,6 +47,21 @@ public class TextAppearance: ViewAppearance {
 }
 
 public extension UILabel {
+
+    public override var appearanceIdentifier: String? {
+        get {
+            return super.appearanceIdentifier
+        }
+        set {
+            if let id = newValue,
+                let textAppearance = Monet.shared.theme?.appearances[id] as? TextAppearance {
+                objc_setAssociatedObject(self, &AssociatedKeys.appearanceIdentifier, newValue, .OBJC_ASSOCIATION_RETAIN)
+                self.setAppearance(textAppearance)
+            } else {
+                super.appearanceIdentifier = newValue
+            }
+        }
+    }
 
     public func setAppearance(_ textAppearance: TextAppearance?) {
         super.setAppearance(textAppearance)
@@ -80,6 +86,21 @@ public extension UIButton {
         public init(autoAdjustBackgroundColor: Bool = true, autoAdjustForegroundColor: Bool = true) {
             self.autoAdjustBackgroundColor = autoAdjustBackgroundColor
             self.autoAdjustForegroundColor = autoAdjustForegroundColor
+        }
+    }
+
+    public override var appearanceIdentifier: String? {
+        get {
+            return super.appearanceIdentifier
+        }
+        set {
+            if let id = newValue,
+                let textAppearance = Monet.shared.theme?.appearances[id] as? TextAppearance {
+                objc_setAssociatedObject(self, &AssociatedKeys.appearanceIdentifier, newValue, .OBJC_ASSOCIATION_RETAIN)
+                self.setAppearance(textAppearance)
+            } else {
+                super.appearanceIdentifier = newValue
+            }
         }
     }
 
@@ -116,6 +137,21 @@ public extension UIButton {
 
 public extension UITextField {
 
+    public override var appearanceIdentifier: String? {
+        get {
+            return super.appearanceIdentifier
+        }
+        set {
+            if let id = newValue,
+                let textAppearance = Monet.shared.theme?.appearances[id] as? TextAppearance {
+                objc_setAssociatedObject(self, &AssociatedKeys.appearanceIdentifier, newValue, .OBJC_ASSOCIATION_RETAIN)
+                self.setAppearance(textAppearance)
+            } else {
+                super.appearanceIdentifier = newValue
+            }
+        }
+    }
+
     public func setAppearance(_ textAppearance: TextAppearance?) {
         super.setAppearance(textAppearance)
         guard let appearance = textAppearance else {
@@ -139,6 +175,21 @@ public extension UITextField {
 }
 
 public extension UITextView {
+
+    public override var appearanceIdentifier: String? {
+        get {
+            return super.appearanceIdentifier
+        }
+        set {
+            if let id = newValue,
+                let textAppearance = Monet.shared.theme?.appearances[id] as? TextAppearance {
+                objc_setAssociatedObject(self, &AssociatedKeys.appearanceIdentifier, newValue, .OBJC_ASSOCIATION_RETAIN)
+                self.setAppearance(textAppearance)
+            } else {
+                super.appearanceIdentifier = newValue
+            }
+        }
+    }
 
     public func setAppearance(_ textAppearance: TextAppearance?) {
         super.setAppearance(textAppearance)

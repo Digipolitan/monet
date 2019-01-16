@@ -18,6 +18,7 @@
 		A30D640B1E0D71CB00A3CE45 /* Monet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A30D64091E0D71CB00A3CE45 /* Monet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A30D640F1E0D73B300A3CE45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D640D1E0D73B300A3CE45 /* ViewController.swift */; };
 		A30D64101E0D73B300A3CE45 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30D640E1E0D73B300A3CE45 /* ViewController.xib */; };
+		A374516A21EEA55300899876 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = A374516921EEA55300899876 /* colors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,7 @@
 		A30D64091E0D71CB00A3CE45 /* Monet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Monet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30D640D1E0D73B300A3CE45 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A30D640E1E0D73B300A3CE45 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		A374516921EEA55300899876 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				7F0BF3871F9F909000426A74 /* default.json */,
 				7F0BF3891F9F93FE00426A74 /* other.json */,
 				7F0BF3A01F9F9C5300426A74 /* custom.json */,
+				A374516921EEA55300899876 /* colors.json */,
 			);
 			path = "MonetSample-iOS";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A374516A21EEA55300899876 /* colors.json in Resources */,
 				7F0BF38A1F9F93FE00426A74 /* other.json in Resources */,
 				A30D63FC1E0D717E00A3CE45 /* LaunchScreen.storyboard in Resources */,
 				7F0BF3A11F9F9C5300426A74 /* custom.json in Resources */,
@@ -309,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -363,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -380,7 +384,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = "MonetSample-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digipolitan.MonetSample-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,7 +398,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 582762VK3P;
 				INFOPLIST_FILE = "MonetSample-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digipolitan.MonetSample-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
