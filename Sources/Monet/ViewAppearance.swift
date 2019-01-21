@@ -63,50 +63,6 @@ public class ViewAppearance: ImmutableMappable, CustomStringConvertible {
     }
 }
 
-public extension UIView {
-
-    public struct AssociatedKeys {
-        static var appearanceIdentifier: UInt8 = 0
-    }
-
-    @IBInspectable public var appearanceIdentifier: String? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.appearanceIdentifier) as? String
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.appearanceIdentifier, newValue, .OBJC_ASSOCIATION_RETAIN)
-            if let id = newValue,
-                let viewAppearance = Monet.shared.theme?.appearances[id] {
-                self.setAppearance(viewAppearance)
-            }
-        }
-    }
-
-    public func setAppearance(_ viewAppearance: ViewAppearance?) {
-        guard let appearance = viewAppearance else {
-            return
-        }
-        if let backgroundColor = appearance.backgroundColor {
-            self.backgroundColor = backgroundColor
-        }
-        if let tintColor = appearance.tintColor {
-            self.tintColor = tintColor
-        }
-        if let border = appearance.border {
-            self.clipsToBounds = true
-            if let color = border.color {
-                self.layer.borderColor = color.cgColor
-            }
-            if let width = border.width {
-                self.layer.borderWidth = CGFloat(width)
-            }
-            if let corner = border.cornerRadius {
-                self.layer.cornerRadius = CGFloat(corner)
-            }
-        }
-    }
-}
-
 extension ViewAppearance {
     public static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
         guard let url = bundle.url(forResource: named, withExtension: named.hasSuffix("json") ? nil : "json") else {

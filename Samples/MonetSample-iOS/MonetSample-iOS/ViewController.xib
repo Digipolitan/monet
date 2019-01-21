@@ -31,7 +31,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="appearanceIdentifier" value="sample"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="appearanceIdentifier" value="body"/>
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-X8-Not">
@@ -39,7 +39,7 @@
                     <viewLayoutGuide key="safeArea" id="LnE-tm-xmb"/>
                     <state key="normal" title="Random"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="appearanceIdentifier" value="sample"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="appearanceIdentifier" value="action"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="RJe-zn-Myb"/>
@@ -57,6 +57,9 @@
                 <constraint firstItem="BsQ-X8-Not" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zbo-oe-Rwj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="gE6-CV-8QF"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="appearanceIdentifier" value="scene"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-142" y="99"/>
         </view>
     </objects>

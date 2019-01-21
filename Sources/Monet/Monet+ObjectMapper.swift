@@ -16,8 +16,9 @@ extension Monet {
     }
 
     struct Context: MapContext {
-        var colors: [String: UIColor]
-        var fonts: [String: UIFont]
+
+        let colors: [String: UIColor]
+        let fonts: [String: UIFont]
 
         func search(existing color: String) -> UIColor? {
             if color.starts(with: Monet.Alias.colors) {

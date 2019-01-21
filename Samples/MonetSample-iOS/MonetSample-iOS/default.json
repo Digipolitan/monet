@@ -4,22 +4,32 @@
         "primary": "#FF877F"
     },
     "@fonts": {
-        "big": {
-            "name": "Helvetica-Bold",
-            "size": 50
+        "regular-body": {
+            "name": "Optima-Regular",
+            "size": 48
+        },
+        "bold-action": {
+            "name": "Optima-Bold",
+            "size": 15
         }
     },
     "appearances": {
         "views": {
-            
+            "scene" : {
+                "backgroundColor": "#123456"
+            }
         },
         "texts": {
-            "sample": {
+            "body": {
                 "backgroundColor": "@colors/primary",
                 "foregroundColor": "#323233",
-                "font": "@fonts/big"
+                "font": "@fonts/regular-body"
+            },
+            "action": {
+                "backgroundColor": "@colors/primary",
+                "foregroundColor": "#FFFFFF",
+                "font": "@fonts/bold-action"
             }
         }
     }
 }
-

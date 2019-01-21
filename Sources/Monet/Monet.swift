@@ -8,6 +8,10 @@
 
 import UIKit
 
+public extension Notification.Name {
+    public static let MonetThemeDidChange = Notification.Name("MonetThemeDidChange")
+}
+
 public class Monet {
 
     public enum Alias {
@@ -17,5 +21,9 @@ public class Monet {
 
     public static let shared = Monet()
 
-    public var theme: Theme?
+    public var theme: Theme? {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name.MonetThemeDidChange, object: self.theme)
+        }
+    }
 }

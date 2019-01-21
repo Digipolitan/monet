@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		24217A13253ED17651089D35 /* Pods_Frameworks_Monet_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8098814EB15D9D2072F4A34 /* Pods_Frameworks_Monet_tvOS.framework */; };
 		85DC9FDCC6AE55AD4DC3D774 /* Pods_Tests_MonetTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7574B77A85ABDA609961274 /* Pods_Tests_MonetTests_tvOS.framework */; };
+		A303237221F1D8AA00E11E19 /* UIView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237121F1D8AA00E11E19 /* UIView+Monet.swift */; };
+		A303237321F1D8AA00E11E19 /* UIView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237121F1D8AA00E11E19 /* UIView+Monet.swift */; };
+		A303237521F1D8B300E11E19 /* UILabel+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237421F1D8B300E11E19 /* UILabel+Monet.swift */; };
+		A303237621F1D8B300E11E19 /* UILabel+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237421F1D8B300E11E19 /* UILabel+Monet.swift */; };
+		A303237821F1D8D700E11E19 /* UITextField+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237721F1D8D700E11E19 /* UITextField+Monet.swift */; };
+		A303237921F1D8D700E11E19 /* UITextField+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237721F1D8D700E11E19 /* UITextField+Monet.swift */; };
+		A303237B21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */; };
+		A303237C21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */; };
+		A303237E21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */; };
+		A303237F21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */; };
 		A3169DBA1DE05E8300BABAFD /* Monet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3169DB01DE05E8300BABAFD /* Monet.framework */; };
 		A3169DF81DE0718900BABAFD /* Monet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3169DEF1DE0718900BABAFD /* Monet.framework */; };
 		A370DF111FB0D75B000FEDED /* MonetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF071FB0D75B000FEDED /* MonetError.swift */; };
@@ -64,6 +74,11 @@
 		41EE68D6BAB8201B6A1BA471 /* Pods_Frameworks_Monet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frameworks_Monet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		757B219FA75A336C64D819DC /* Pods-Frameworks-Monet-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frameworks-Monet-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frameworks-Monet-iOS/Pods-Frameworks-Monet-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		93894B034E052FA5CC74820F /* Pods-Frameworks-Monet-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frameworks-Monet-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frameworks-Monet-tvOS/Pods-Frameworks-Monet-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A303237121F1D8AA00E11E19 /* UIView+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Monet.swift"; sourceTree = "<group>"; };
+		A303237421F1D8B300E11E19 /* UILabel+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Monet.swift"; sourceTree = "<group>"; };
+		A303237721F1D8D700E11E19 /* UITextField+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Monet.swift"; sourceTree = "<group>"; };
+		A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Monet.swift"; sourceTree = "<group>"; };
+		A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Monet.swift"; sourceTree = "<group>"; };
 		A3169DB01DE05E8300BABAFD /* Monet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169DB91DE05E8300BABAFD /* MonetTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonetTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169DCC1DE0629100BABAFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +217,11 @@
 				A370DF101FB0D75B000FEDED /* Theme.swift */,
 				A374516B21EEB38C00899876 /* AppearanceRegistry.swift */,
 				A374516E21EEB70D00899876 /* Monet+ObjectMapper.swift */,
+				A303237121F1D8AA00E11E19 /* UIView+Monet.swift */,
+				A303237421F1D8B300E11E19 /* UILabel+Monet.swift */,
+				A303237721F1D8D700E11E19 /* UITextField+Monet.swift */,
+				A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */,
+				A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */,
 			);
 			path = Monet;
 			sourceTree = "<group>";
@@ -564,15 +584,20 @@
 			files = (
 				A370DF231FB0D75B000FEDED /* Theme.swift in Sources */,
 				A370DF151FB0D75B000FEDED /* FontTransform.swift in Sources */,
+				A303237E21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */,
 				A370DF111FB0D75B000FEDED /* MonetError.swift in Sources */,
 				A370DF1B1FB0D75B000FEDED /* TextAppearance.swift in Sources */,
+				A303237821F1D8D700E11E19 /* UITextField+Monet.swift in Sources */,
 				A370DF1F1FB0D75B000FEDED /* ViewAppearance.swift in Sources */,
 				A370DF131FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */,
 				A374516F21EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */,
 				A370DF1D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift in Sources */,
 				A370DF211FB0D75B000FEDED /* UIColor+RGB255.swift in Sources */,
+				A303237521F1D8B300E11E19 /* UILabel+Monet.swift in Sources */,
 				A374516C21EEB38C00899876 /* AppearanceRegistry.swift in Sources */,
+				A303237B21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */,
 				A370DF191FB0D75B000FEDED /* Monet.swift in Sources */,
+				A303237221F1D8AA00E11E19 /* UIView+Monet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,15 +615,20 @@
 			files = (
 				A370DF241FB0D75B000FEDED /* Theme.swift in Sources */,
 				A370DF161FB0D75B000FEDED /* FontTransform.swift in Sources */,
+				A303237F21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */,
 				A370DF121FB0D75B000FEDED /* MonetError.swift in Sources */,
 				A370DF1C1FB0D75B000FEDED /* TextAppearance.swift in Sources */,
+				A303237921F1D8D700E11E19 /* UITextField+Monet.swift in Sources */,
 				A370DF201FB0D75B000FEDED /* ViewAppearance.swift in Sources */,
 				A370DF141FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */,
 				A374517021EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */,
 				A370DF1E1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift in Sources */,
 				A370DF221FB0D75B000FEDED /* UIColor+RGB255.swift in Sources */,
+				A303237621F1D8B300E11E19 /* UILabel+Monet.swift in Sources */,
 				A374516D21EEB38C00899876 /* AppearanceRegistry.swift in Sources */,
+				A303237C21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */,
 				A370DF1A1FB0D75B000FEDED /* Monet.swift in Sources */,
+				A303237321F1D8AA00E11E19 /* UIView+Monet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

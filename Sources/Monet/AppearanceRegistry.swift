@@ -8,17 +8,13 @@
 
 import ObjectMapper
 
-public class AppearanceRegistry: ImmutableMappable {
+public struct AppearanceRegistry: ImmutableMappable {
 
     public var views: [String: ViewAppearance]
     public var texts: [String: TextAppearance]
 
-    public required init(map: Map) throws {
+    public init(map: Map) throws {
         self.views = (try? map.value("views")) ?? [:]
         self.texts = (try? map.value("texts")) ?? [:]
-    }
-
-    public subscript(key: String) -> ViewAppearance? {
-        return self.views[key] ?? self.texts[key]
     }
 }
