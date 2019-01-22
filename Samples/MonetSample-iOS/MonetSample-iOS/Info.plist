@@ -26,12 +26,15 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>Themes</key>
-	<array>
-		<string>custom</string>
-		<string>other</string>
-		<string>default</string>
-	</array>
+	<key>Monet</key>
+	<dict>
+		<key>Themes</key>
+		<array>
+			<string>custom</string>
+			<string>other</string>
+			<string>default</string>
+		</array>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

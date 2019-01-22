@@ -1,21 +1,35 @@
 {
     "identifier": "com.digipolitan.theme.default",
-    "scene": {
-        "backgroundColor": "#123456",
+    "@colors": {
+        "primary": "#FF877F"
     },
-    "body": {
-        "foregroundColor": "#FFFFFF",
-        "font": {
-            "name": "HelveticaNeue-Medium",
+    "@fonts": {
+        "regular-body": {
+            "name": "Optima-Regular",
             "size": 48
+        },
+        "bold-action": {
+            "name": "Optima-Bold",
+            "size": 15
         }
     },
-    "action": {
-        "backgroundColor": "#777777",
-        "foregroundColor": "#FFFFFF",
-        "font": {
-            "name": "HelveticaNeue-Bold",
-            "size": 15
+    "appearances": {
+        "views": {
+            "scene" : {
+                "backgroundColor": "#123456"
+            }
+        },
+        "texts": {
+            "body": {
+                "backgroundColor": "@colors/primary",
+                "foregroundColor": "#323233",
+                "font": "@fonts/regular-body"
+            },
+            "action": {
+                "backgroundColor": "@colors/primary",
+                "foregroundColor": "#FFFFFF",
+                "font": "@fonts/bold-action"
+            }
         }
     }
 }

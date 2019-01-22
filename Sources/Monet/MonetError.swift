@@ -1,5 +1,5 @@
 //
-//  ThemeError.swift
+//  MonetError.swift
 //  Monet
 //
 //  Created by Benoit BRIATTE on 24/10/2017.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum ThemeError: Error {
-    // swiftlint:disable identifier_name
+public enum MonetError: Error {
     case noSuchTheme(file: String)
-    // swiftlint:enable identifier_name
     case malformatedTheme
+    case noSuchAppearance(file: String)
+    case malformatedAppearance
 }

@@ -13,23 +13,28 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
+    static let themes = [
+        "default",
+        "other",
+        "custom"
+    ]
 
-    func setupUI(theme: Theme) {
-        self.label.setAppearance(theme.body)
-        self.view.setAppearance(theme.scene)
-        self.button.setAppearance(theme.action)
-        self.title = theme.identifier
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: Notification.Name.MonetThemeDidChange, object: nil)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupUI(theme: ThemeManager.shared.current)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.MonetThemeDidChange, object: nil)
+    }
+
+    @objc func themeDidChange() {
+        self.view.redrawAppearance()
     }
 
     @IBAction func btnClicked(_ sender: UIButton!) {
-        let manager = ThemeManager.shared
-        let rand: Int = Int(arc4random())
-        manager.current = manager.themes[rand % manager.themes.count]
-        self.setupUI(theme: ThemeManager.shared.current)
+        let rand: Int = Int.random(in: 0 ... 2)
+        Monet.shared.theme = try? Theme.from(jsonFile: ViewController.themes[rand])
     }
 }

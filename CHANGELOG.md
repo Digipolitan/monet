@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [2.0.0](https://github.com/Digipolitan/monet/releases/tag/v2.0.0)
+
+update readme
+fix some bug & update sample codes
+refactoring monet, new system using @IBInspectable !
+
+---
+
 ## [1.1.3](https://github.com/Digipolitan/monet/releases/tag/v1.1.3)
 
 update swift version to 4.2

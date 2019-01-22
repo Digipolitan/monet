@@ -9,18 +9,28 @@
 /* Begin PBXBuildFile section */
 		24217A13253ED17651089D35 /* Pods_Frameworks_Monet_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8098814EB15D9D2072F4A34 /* Pods_Frameworks_Monet_tvOS.framework */; };
 		85DC9FDCC6AE55AD4DC3D774 /* Pods_Tests_MonetTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7574B77A85ABDA609961274 /* Pods_Tests_MonetTests_tvOS.framework */; };
+		A303237221F1D8AA00E11E19 /* UIView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237121F1D8AA00E11E19 /* UIView+Monet.swift */; };
+		A303237321F1D8AA00E11E19 /* UIView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237121F1D8AA00E11E19 /* UIView+Monet.swift */; };
+		A303237521F1D8B300E11E19 /* UILabel+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237421F1D8B300E11E19 /* UILabel+Monet.swift */; };
+		A303237621F1D8B300E11E19 /* UILabel+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237421F1D8B300E11E19 /* UILabel+Monet.swift */; };
+		A303237821F1D8D700E11E19 /* UITextField+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237721F1D8D700E11E19 /* UITextField+Monet.swift */; };
+		A303237921F1D8D700E11E19 /* UITextField+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237721F1D8D700E11E19 /* UITextField+Monet.swift */; };
+		A303237B21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */; };
+		A303237C21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */; };
+		A303237E21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */; };
+		A303237F21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */; };
 		A3169DBA1DE05E8300BABAFD /* Monet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3169DB01DE05E8300BABAFD /* Monet.framework */; };
 		A3169DF81DE0718900BABAFD /* Monet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3169DEF1DE0718900BABAFD /* Monet.framework */; };
-		A370DF111FB0D75B000FEDED /* ThemeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF071FB0D75B000FEDED /* ThemeError.swift */; };
-		A370DF121FB0D75B000FEDED /* ThemeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF071FB0D75B000FEDED /* ThemeError.swift */; };
+		A370DF111FB0D75B000FEDED /* MonetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF071FB0D75B000FEDED /* MonetError.swift */; };
+		A370DF121FB0D75B000FEDED /* MonetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF071FB0D75B000FEDED /* MonetError.swift */; };
 		A370DF131FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF081FB0D75B000FEDED /* UIColor+UIControlState.swift */; };
 		A370DF141FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF081FB0D75B000FEDED /* UIColor+UIControlState.swift */; };
 		A370DF151FB0D75B000FEDED /* FontTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF091FB0D75B000FEDED /* FontTransform.swift */; };
 		A370DF161FB0D75B000FEDED /* FontTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF091FB0D75B000FEDED /* FontTransform.swift */; };
 		A370DF171FB0D75B000FEDED /* Monet.h in Headers */ = {isa = PBXBuildFile; fileRef = A370DF0A1FB0D75B000FEDED /* Monet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A370DF181FB0D75B000FEDED /* Monet.h in Headers */ = {isa = PBXBuildFile; fileRef = A370DF0A1FB0D75B000FEDED /* Monet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A370DF191FB0D75B000FEDED /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0B1FB0D75B000FEDED /* ThemeManager.swift */; };
-		A370DF1A1FB0D75B000FEDED /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0B1FB0D75B000FEDED /* ThemeManager.swift */; };
+		A370DF191FB0D75B000FEDED /* Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0B1FB0D75B000FEDED /* Monet.swift */; };
+		A370DF1A1FB0D75B000FEDED /* Monet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0B1FB0D75B000FEDED /* Monet.swift */; };
 		A370DF1B1FB0D75B000FEDED /* TextAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0C1FB0D75B000FEDED /* TextAppearance.swift */; };
 		A370DF1C1FB0D75B000FEDED /* TextAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0C1FB0D75B000FEDED /* TextAppearance.swift */; };
 		A370DF1D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift */; };
@@ -31,6 +41,10 @@
 		A370DF221FB0D75B000FEDED /* UIColor+RGB255.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF0F1FB0D75B000FEDED /* UIColor+RGB255.swift */; };
 		A370DF231FB0D75B000FEDED /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF101FB0D75B000FEDED /* Theme.swift */; };
 		A370DF241FB0D75B000FEDED /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DF101FB0D75B000FEDED /* Theme.swift */; };
+		A374516C21EEB38C00899876 /* AppearanceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374516B21EEB38C00899876 /* AppearanceRegistry.swift */; };
+		A374516D21EEB38C00899876 /* AppearanceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374516B21EEB38C00899876 /* AppearanceRegistry.swift */; };
+		A374516F21EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374516E21EEB70D00899876 /* Monet+ObjectMapper.swift */; };
+		A374517021EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374516E21EEB70D00899876 /* Monet+ObjectMapper.swift */; };
 		A38EF2CA1DECF97000637484 /* MonetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38EF2C71DECF97000637484 /* MonetTests.swift */; };
 		A38EF2CB1DECF97000637484 /* MonetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38EF2C71DECF97000637484 /* MonetTests.swift */; };
 		F08B78C560CE15D29983917F /* Pods_Tests_MonetTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C2F6F8BBE9634556E13CF5 /* Pods_Tests_MonetTests_iOS.framework */; };
@@ -60,6 +74,11 @@
 		41EE68D6BAB8201B6A1BA471 /* Pods_Frameworks_Monet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frameworks_Monet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		757B219FA75A336C64D819DC /* Pods-Frameworks-Monet-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frameworks-Monet-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frameworks-Monet-iOS/Pods-Frameworks-Monet-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		93894B034E052FA5CC74820F /* Pods-Frameworks-Monet-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frameworks-Monet-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frameworks-Monet-tvOS/Pods-Frameworks-Monet-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A303237121F1D8AA00E11E19 /* UIView+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Monet.swift"; sourceTree = "<group>"; };
+		A303237421F1D8B300E11E19 /* UILabel+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Monet.swift"; sourceTree = "<group>"; };
+		A303237721F1D8D700E11E19 /* UITextField+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Monet.swift"; sourceTree = "<group>"; };
+		A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Monet.swift"; sourceTree = "<group>"; };
+		A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Monet.swift"; sourceTree = "<group>"; };
 		A3169DB01DE05E8300BABAFD /* Monet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169DB91DE05E8300BABAFD /* MonetTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonetTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169DCC1DE0629100BABAFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,16 +88,18 @@
 		A3169DF71DE0718900BABAFD /* MonetTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonetTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169E0C1DE072C700BABAFD /* Monet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3169E141DE072C800BABAFD /* MonetTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MonetTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A370DF071FB0D75B000FEDED /* ThemeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeError.swift; sourceTree = "<group>"; };
+		A370DF071FB0D75B000FEDED /* MonetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonetError.swift; sourceTree = "<group>"; };
 		A370DF081FB0D75B000FEDED /* UIColor+UIControlState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIControlState.swift"; sourceTree = "<group>"; };
 		A370DF091FB0D75B000FEDED /* FontTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTransform.swift; sourceTree = "<group>"; };
 		A370DF0A1FB0D75B000FEDED /* Monet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monet.h; sourceTree = "<group>"; };
-		A370DF0B1FB0D75B000FEDED /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		A370DF0B1FB0D75B000FEDED /* Monet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monet.swift; sourceTree = "<group>"; };
 		A370DF0C1FB0D75B000FEDED /* TextAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAppearance.swift; sourceTree = "<group>"; };
 		A370DF0D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIImageRepresentation.swift"; sourceTree = "<group>"; };
 		A370DF0E1FB0D75B000FEDED /* ViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAppearance.swift; sourceTree = "<group>"; };
 		A370DF0F1FB0D75B000FEDED /* UIColor+RGB255.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB255.swift"; sourceTree = "<group>"; };
 		A370DF101FB0D75B000FEDED /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A374516B21EEB38C00899876 /* AppearanceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceRegistry.swift; sourceTree = "<group>"; };
+		A374516E21EEB70D00899876 /* Monet+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Monet+ObjectMapper.swift"; sourceTree = "<group>"; };
 		A38EF2C71DECF97000637484 /* MonetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonetTests.swift; sourceTree = "<group>"; };
 		A8098814EB15D9D2072F4A34 /* Pods_Frameworks_Monet_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frameworks_Monet_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C2F6F8BBE9634556E13CF5 /* Pods_Tests_MonetTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests_MonetTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,16 +205,23 @@
 		A370DF061FB0D75B000FEDED /* Monet */ = {
 			isa = PBXGroup;
 			children = (
-				A370DF071FB0D75B000FEDED /* ThemeError.swift */,
+				A370DF071FB0D75B000FEDED /* MonetError.swift */,
 				A370DF081FB0D75B000FEDED /* UIColor+UIControlState.swift */,
 				A370DF091FB0D75B000FEDED /* FontTransform.swift */,
 				A370DF0A1FB0D75B000FEDED /* Monet.h */,
-				A370DF0B1FB0D75B000FEDED /* ThemeManager.swift */,
+				A370DF0B1FB0D75B000FEDED /* Monet.swift */,
 				A370DF0C1FB0D75B000FEDED /* TextAppearance.swift */,
 				A370DF0D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift */,
 				A370DF0E1FB0D75B000FEDED /* ViewAppearance.swift */,
 				A370DF0F1FB0D75B000FEDED /* UIColor+RGB255.swift */,
 				A370DF101FB0D75B000FEDED /* Theme.swift */,
+				A374516B21EEB38C00899876 /* AppearanceRegistry.swift */,
+				A374516E21EEB70D00899876 /* Monet+ObjectMapper.swift */,
+				A303237121F1D8AA00E11E19 /* UIView+Monet.swift */,
+				A303237421F1D8B300E11E19 /* UILabel+Monet.swift */,
+				A303237721F1D8D700E11E19 /* UITextField+Monet.swift */,
+				A303237A21F1D8DF00E11E19 /* UITextView+Monet.swift */,
+				A303237D21F1D91F00E11E19 /* UIButton+Monet.swift */,
 			);
 			path = Monet;
 			sourceTree = "<group>";
@@ -556,13 +584,20 @@
 			files = (
 				A370DF231FB0D75B000FEDED /* Theme.swift in Sources */,
 				A370DF151FB0D75B000FEDED /* FontTransform.swift in Sources */,
-				A370DF111FB0D75B000FEDED /* ThemeError.swift in Sources */,
+				A303237E21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */,
+				A370DF111FB0D75B000FEDED /* MonetError.swift in Sources */,
 				A370DF1B1FB0D75B000FEDED /* TextAppearance.swift in Sources */,
+				A303237821F1D8D700E11E19 /* UITextField+Monet.swift in Sources */,
 				A370DF1F1FB0D75B000FEDED /* ViewAppearance.swift in Sources */,
 				A370DF131FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */,
+				A374516F21EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */,
 				A370DF1D1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift in Sources */,
 				A370DF211FB0D75B000FEDED /* UIColor+RGB255.swift in Sources */,
-				A370DF191FB0D75B000FEDED /* ThemeManager.swift in Sources */,
+				A303237521F1D8B300E11E19 /* UILabel+Monet.swift in Sources */,
+				A374516C21EEB38C00899876 /* AppearanceRegistry.swift in Sources */,
+				A303237B21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */,
+				A370DF191FB0D75B000FEDED /* Monet.swift in Sources */,
+				A303237221F1D8AA00E11E19 /* UIView+Monet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,13 +615,20 @@
 			files = (
 				A370DF241FB0D75B000FEDED /* Theme.swift in Sources */,
 				A370DF161FB0D75B000FEDED /* FontTransform.swift in Sources */,
-				A370DF121FB0D75B000FEDED /* ThemeError.swift in Sources */,
+				A303237F21F1D91F00E11E19 /* UIButton+Monet.swift in Sources */,
+				A370DF121FB0D75B000FEDED /* MonetError.swift in Sources */,
 				A370DF1C1FB0D75B000FEDED /* TextAppearance.swift in Sources */,
+				A303237921F1D8D700E11E19 /* UITextField+Monet.swift in Sources */,
 				A370DF201FB0D75B000FEDED /* ViewAppearance.swift in Sources */,
 				A370DF141FB0D75B000FEDED /* UIColor+UIControlState.swift in Sources */,
+				A374517021EEB70D00899876 /* Monet+ObjectMapper.swift in Sources */,
 				A370DF1E1FB0D75B000FEDED /* UIColor+UIImageRepresentation.swift in Sources */,
 				A370DF221FB0D75B000FEDED /* UIColor+RGB255.swift in Sources */,
-				A370DF1A1FB0D75B000FEDED /* ThemeManager.swift in Sources */,
+				A303237621F1D8B300E11E19 /* UILabel+Monet.swift in Sources */,
+				A374516D21EEB38C00899876 /* AppearanceRegistry.swift in Sources */,
+				A303237C21F1D8DF00E11E19 /* UITextView+Monet.swift in Sources */,
+				A370DF1A1FB0D75B000FEDED /* Monet.swift in Sources */,
+				A303237321F1D8AA00E11E19 /* UIView+Monet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -717,7 +759,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -8,15 +8,12 @@
 
 import UIKit
 import ObjectMapper
+import ObjectiveC
 
 public class BorderAppearance: ImmutableMappable {
     public let color: UIColor?
     public let cornerRadius: Double?
     public let width: Double?
-
-    public static let colorTransformer: HexColorTransform = {
-        return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
-    }()
 
     public init(color: UIColor? = nil, cornerRadius: Double? = nil, width: Double? = nil) {
         self.color = color
@@ -25,15 +22,13 @@ public class BorderAppearance: ImmutableMappable {
     }
 
     public required init(map: Map) throws {
-        let selfClass = type(of: self)
-        self.color = try? map.value("color", using: selfClass.colorTransformer)
+        self.color = map.color(key: "color")
         self.cornerRadius = try? map.value("cornerRadius")
         self.width = try? map.value("width")
     }
 
     public func mapping(map: Map) {
-        let selfClass = type(of: self)
-        self.color >>> (map["color"], selfClass.colorTransformer)
+        self.color >>> (map["color"], Monet.Transformers.colorTransformer)
         self.cornerRadius >>> map["cornerRadius"]
         self.width >>> map["width"]
     }
@@ -45,13 +40,6 @@ public class ViewAppearance: ImmutableMappable, CustomStringConvertible {
     public let tintColor: UIColor?
     public let border: BorderAppearance?
 
-    public static let backgroundColorTransformer: HexColorTransform = {
-        return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
-    }()
-    public static let tintColorTransformer: HexColorTransform = {
-        return HexColorTransform(prefixToJSON: true, alphaToJSON: true)
-    }()
-
      public init(backgroundColor: UIColor? = nil, tintColor: UIColor? = nil, border: BorderAppearance? = nil) {
         self.backgroundColor = backgroundColor
         self.tintColor = tintColor
@@ -59,16 +47,14 @@ public class ViewAppearance: ImmutableMappable, CustomStringConvertible {
      }
 
     public required init(map: Map) throws {
-        let selfClass = type(of: self)
-        self.backgroundColor = try? map.value("backgroundColor", using: selfClass.backgroundColorTransformer)
-        self.tintColor = try? map.value("tintColor", using: selfClass.tintColorTransformer)
+        self.backgroundColor = map.color(key: "backgroundColor")
+        self.tintColor = map.color(key: "tintColor")
         self.border = try? map.value("border")
     }
 
     public func mapping(map: Map) {
-        let selfClass = type(of: self)
-        self.backgroundColor >>> (map["backgroundColor"], selfClass.backgroundColorTransformer)
-        self.tintColor >>> (map["tintColor"], selfClass.tintColorTransformer)
+        self.backgroundColor >>> (map["backgroundColor"], Monet.Transformers.colorTransformer)
+        self.tintColor >>> (map["tintColor"], Monet.Transformers.colorTransformer)
         self.border >>> map["border"]
     }
 
@@ -77,29 +63,17 @@ public class ViewAppearance: ImmutableMappable, CustomStringConvertible {
     }
 }
 
-public extension UIView {
-
-    public func setAppearance(_ viewAppearance: ViewAppearance?) {
-        guard let appearance = viewAppearance else {
-            return
+extension ViewAppearance {
+    public static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
+        guard let url = bundle.url(forResource: named, withExtension: named.hasSuffix("json") ? nil : "json") else {
+            throw MonetError.noSuchAppearance(file: named)
         }
-        if let backgroundColor = appearance.backgroundColor {
-            self.backgroundColor = backgroundColor
+        guard
+            let data = try? Data(contentsOf: url),
+            let object = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+            let json = object as? [String: Any] else {
+                throw MonetError.malformatedAppearance
         }
-        if let tintColor = appearance.tintColor {
-            self.tintColor = tintColor
-        }
-        if let border = appearance.border {
-            self.clipsToBounds = true
-            if let color = border.color {
-                self.layer.borderColor = color.cgColor
-            }
-            if let width = border.width {
-                self.layer.borderWidth = CGFloat(width)
-            }
-            if let corner = border.cornerRadius {
-                self.layer.cornerRadius = CGFloat(corner)
-            }
-        }
+        return try self.init(map: Map(mappingType: .fromJSON, JSON: json))
     }
 }
