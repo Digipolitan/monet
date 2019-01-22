@@ -38,63 +38,49 @@ $ brew install carthage
 To integrate Monet into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
-github 'Digipolitan/monet' ~> 1.0
+github 'Digipolitan/monet' ~> 2.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Monet.framework` into your Xcode project.
 
 ## The Basics
 
-First you must add into your **Info.plist** the key **Themes** of type **array** with your themes names.
-```xml
-<key>Themes</key>
-<array>
-	<string>custom</string>
-	<string>other</string>
-	<string>default</string>
-</array>
-```
-
-After that you need to **create** youre theme template in **json**.<br>
+You need to **create** your theme template in **json**.<br>
 On this example we create **default.json** which correspond to the default template of the app.
 
 ```json
 {
     "identifier": "com.digipolitan.theme.default",
-    "body": {
-        "foregroundColor": "#000000",
-        "font": {
-            "name": "Optima-Bold",
+    "@colors": {
+        "primary": "#FF877F"
+    },
+    "@fonts": {
+        "regular-body": {
+            "name": "Optima-Regular",
             "size": 48
-        }
-    },
-    "h1": {
-        "foregroundColor": "#363636",
-        "font": {
-            "name": "Optima-Regular",
-            "size": 14
-        }
-    },
-    "placeholder": {
-        "foregroundColor": "#ABABAB",
-        "font": {
-            "name": "Optima-Regular",
-            "size": 15
-        }
-    },
-    "input": {
-        "foregroundColor": "#000000",
-        "font": {
-            "name": "Optima-Regular",
-            "size": 15
-        }
-    },
-    "action": {
-        "backgroundColor": "#000000",
-        "foregroundColor": "#FFFFFF",
-        "font": {
+        },
+        "bold-action": {
             "name": "Optima-Bold",
             "size": 15
+        }
+    },
+    "appearances": {
+        "views": {
+            "scene" : {
+                "backgroundColor": "#123456"
+            }
+        },
+        "texts": {
+            "body": {
+                "backgroundColor": "@colors/primary",
+                "foregroundColor": "#323233",
+                "font": "@fonts/regular-body"
+            },
+            "action": {
+                "backgroundColor": "@colors/primary",
+                "foregroundColor": "#FFFFFF",
+                "font": "@fonts/bold-action"
+            }
         }
     }
 }
@@ -102,19 +88,17 @@ On this example we create **default.json** which correspond to the default templ
 Then you can set your default theme like following
 
 ```swift
-let manager = ThemeManager.shared
-guard let defaultTheme = manager.themes.first(where: { $0.identifier == "com.digipolitan.theme.default" }) else {
-	return
-}
-manager.current = defaultTheme
+Monet.shared.theme = try? Theme.from(jsonFile: "default")
 ```
 
 Then you can just set all the appearence of your app like following
 
 ```swift
-self.label.setAppearance(theme.body)
-self.view.setAppearance(theme.action)
+self.label.setAppearance(theme.appearances.texts["body"])
+self.view.setAppearance(theme.appearances.views["scene"])
 ```
+
+Now it's possible to setup appearance in the InterfaceBuilder with the dynamic key `appearanceIdentifier` for each UIView subclasses
 
 ## Contributing
 
