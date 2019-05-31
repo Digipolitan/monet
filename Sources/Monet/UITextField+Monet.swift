@@ -10,7 +10,7 @@ import UIKit
 
 public extension UITextField {
 
-    public override var appearanceIdentifier: String? {
+    override var appearanceIdentifier: String? {
         get {
             return super.appearanceIdentifier
         }
@@ -25,7 +25,7 @@ public extension UITextField {
         }
     }
 
-    public func drawAppearance(_ textAppearance: TextAppearance?) {
+    func drawAppearance(_ textAppearance: TextAppearance?) {
         super.drawAppearance(textAppearance)
         guard let appearance = textAppearance else {
             return
@@ -38,7 +38,7 @@ public extension UITextField {
         }
     }
 
-    public func drawPlaceholderAppearance(_ textAppearance: TextAppearance?, placeholder: String) {
+    func drawPlaceholderAppearance(_ textAppearance: TextAppearance?, placeholder: String) {
         if let appearance = textAppearance {
             self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: appearance.attributes)
         } else {

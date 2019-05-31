@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-public class Theme: ImmutableMappable {
+open class Theme: ImmutableMappable {
 
     public let identifier: String
 
@@ -29,8 +29,8 @@ public class Theme: ImmutableMappable {
     }
 
     public convenience required init(map: Map) throws {
-        let colors: [String: UIColor] = (try? map.value(Monet.Alias.colors, using: Monet.Transformers.colorTransformer)) ?? [:]
-        let fonts: [String: UIFont] = (try? map.value(Monet.Alias.fonts, using: Monet.Transformers.fontTransformer)) ?? [:]
+        let colors: [String: UIColor] = map[Monet.Alias.colors].isKeyPresent ? try map.value(Monet.Alias.colors, using: Monet.Transformers.colorTransformer) : [:]
+        let fonts: [String: UIFont] = map[Monet.Alias.fonts].isKeyPresent ? try map.value(Monet.Alias.fonts, using: Monet.Transformers.fontTransformer) : [:]
         map.context = Monet.Context(colors: colors, fonts: fonts)
         self.init(identifier: try map.value("identifier"),
                   colors: colors,
@@ -53,8 +53,8 @@ extension Theme: CustomStringConvertible {
     }
 }
 
-extension Theme {
-    public static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
+public extension Theme {
+    static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
         guard let url = bundle.url(forResource: named, withExtension: named.hasSuffix("json") ? nil : "json") else {
             throw MonetError.noSuchTheme(file: named)
         }

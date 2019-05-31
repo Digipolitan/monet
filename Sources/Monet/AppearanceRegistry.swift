@@ -14,7 +14,19 @@ public struct AppearanceRegistry: ImmutableMappable {
     public var texts: [String: TextAppearance]
 
     public init(map: Map) throws {
-        self.views = (try? map.value("views")) ?? [:]
-        self.texts = (try? map.value("texts")) ?? [:]
+        self.views = map["views"].isKeyPresent ? try map.value("views") : [:]
+        self.texts = map["texts"].isKeyPresent ? try map.value("texts") : [:]
+    }
+
+    public func mapping(map: Map) {
+        self.views >>> map["views"]
+        self.texts >>> map["texts"]
+    }
+}
+
+extension AppearanceRegistry: CustomStringConvertible {
+
+    public var description: String {
+        return self.toJSONString() ?? "{}"
     }
 }

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [2.0.1](https://github.com/Digipolitan/monet/releases/tag/v2.0.1)
+
+update swift 5
+
+---
+
 ## [2.0.0](https://github.com/Digipolitan/monet/releases/tag/v2.0.0)
 
 update readme

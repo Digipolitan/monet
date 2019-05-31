@@ -9,7 +9,7 @@
 import UIKit
 
 public extension Notification.Name {
-    public static let MonetThemeDidChange = Notification.Name("MonetThemeDidChange")
+    static let MonetThemeDidChange = Notification.Name("MonetThemeDidChange")
 }
 
 public class Monet {

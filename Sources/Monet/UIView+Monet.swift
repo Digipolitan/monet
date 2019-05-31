@@ -10,11 +10,11 @@ import UIKit
 
 public extension UIView {
 
-    public struct AssociatedKeys {
+    struct AssociatedKeys {
         static var appearanceIdentifier: UInt8 = 0
     }
 
-    @IBInspectable public var appearanceIdentifier: String? {
+    @IBInspectable var appearanceIdentifier: String? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.appearanceIdentifier) as? String
         }
@@ -27,7 +27,7 @@ public extension UIView {
         }
     }
 
-    public func drawAppearance(_ viewAppearance: ViewAppearance?) {
+    func drawAppearance(_ viewAppearance: ViewAppearance?) {
         guard let appearance = viewAppearance else {
             return
         }
@@ -51,7 +51,7 @@ public extension UIView {
         }
     }
 
-    public func redrawAppearance() {
+    func redrawAppearance() {
         let appearanceIdentifier = self.appearanceIdentifier
         self.appearanceIdentifier = appearanceIdentifier
         for child in self.subviews {

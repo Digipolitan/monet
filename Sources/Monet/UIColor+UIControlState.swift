@@ -10,11 +10,11 @@ import UIKit
 
 public extension UIColor {
 
-    public var disabled: UIColor {
+    var disabled: UIColor {
         return self.withAlphaComponent(self.cgColor.alpha / 1.89)
     }
 
-    public var highlighted: UIColor {
+    var highlighted: UIColor {
         var rgb = self.rgb255
         rgb.red /= 1.89
         rgb.green /= 1.89

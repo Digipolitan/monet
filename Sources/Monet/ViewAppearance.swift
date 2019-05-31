@@ -63,8 +63,8 @@ public class ViewAppearance: ImmutableMappable, CustomStringConvertible {
     }
 }
 
-extension ViewAppearance {
-    public static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
+public extension ViewAppearance {
+    static func from(jsonFile named: String, in bundle: Bundle = .main) throws -> Self {
         guard let url = bundle.url(forResource: named, withExtension: named.hasSuffix("json") ? nil : "json") else {
             throw MonetError.noSuchAppearance(file: named)
         }
