@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = "Monet"
-s.version = "2.0.0"
+s.version = "2.0.1"
 s.summary = "Theme manager to simplify app appearences"
 s.homepage = "https://github.com/Digipolitan/monet"
 s.authors = "Digipolitan"
