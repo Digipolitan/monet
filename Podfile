@@ -4,10 +4,10 @@ workspace 'Monet.xcworkspace'
 abstract_target 'Frameworks' do
 	use_frameworks!
 
-	pod 'ObjectMapper', '~> 3.0'
+	pod 'ObjectMapper', '~> 3.4', :inhibit_warnings => true
 
 	target 'Monet-iOS' do
-		platform :ios, '8.0'
+		platform :ios, '9.0'
 	end
 
 	target 'Monet-tvOS' do
@@ -19,10 +19,8 @@ end
 abstract_target 'Tests' do
 	use_frameworks!
 
-	pod 'ObjectMapper', '~> 3.0'
-
 	target 'MonetTests-iOS' do
-		platform :ios, '8.0'
+		platform :ios, '9.0'
 	end
 
 	target 'MonetTests-tvOS' do
@@ -34,11 +32,9 @@ end
 abstract_target 'Samples' do
 	use_frameworks!
 
-	pod 'ObjectMapper', '~> 3.0'
-
 	target 'MonetSample-iOS' do
 		project 'Samples/MonetSample-iOS/MonetSample-iOS'
-		platform :ios, '8.0'
+		platform :ios, '9.0'
 	end
 
 	target 'MonetSample-tvOS' do

@@ -10,7 +10,7 @@ import UIKit
 
 public extension UILabel {
 
-    public override var appearanceIdentifier: String? {
+    override var appearanceIdentifier: String? {
         get {
             return super.appearanceIdentifier
         }
@@ -25,7 +25,7 @@ public extension UILabel {
         }
     }
 
-    public func drawAppearance(_ textAppearance: TextAppearance?) {
+    func drawAppearance(_ textAppearance: TextAppearance?) {
         super.drawAppearance(textAppearance)
         guard let appearance = textAppearance else {
             return

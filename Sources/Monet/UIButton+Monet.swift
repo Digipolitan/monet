@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIButton {
 
-    public struct AppearanceOptions {
+    struct AppearanceOptions {
         public let autoAdjustBackgroundColor: Bool
         public let autoAdjustForegroundColor: Bool
 
@@ -20,7 +20,7 @@ public extension UIButton {
         }
     }
 
-    public override var appearanceIdentifier: String? {
+    override var appearanceIdentifier: String? {
         get {
             return super.appearanceIdentifier
         }
@@ -35,11 +35,11 @@ public extension UIButton {
         }
     }
 
-    public func drawAppearance(_ textAppearance: TextAppearance?) {
+    func drawAppearance(_ textAppearance: TextAppearance?) {
         self.drawAppearance(textAppearance, options: AppearanceOptions())
     }
 
-    public func drawAppearance(_ textAppearance: TextAppearance?, options: AppearanceOptions) {
+    func drawAppearance(_ textAppearance: TextAppearance?, options: AppearanceOptions) {
         super.drawAppearance(textAppearance)
         guard let appearance = textAppearance else {
             return

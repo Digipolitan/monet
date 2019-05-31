@@ -8,9 +8,9 @@
 
 import ObjectMapper
 
-extension Monet {
+public extension Monet {
 
-    public enum Transformers {
+    enum Transformers {
         public static let colorTransformer: HexColorTransform = HexColorTransform(prefixToJSON: true, alphaToJSON: true)
         public static let fontTransformer: FontTransform = FontTransform()
     }
@@ -40,7 +40,7 @@ extension Monet {
     }
 }
 
-extension Map {
+public extension Map {
 
     func color(key: String) -> UIColor? {
         if let context = self.context as? Monet.Context,

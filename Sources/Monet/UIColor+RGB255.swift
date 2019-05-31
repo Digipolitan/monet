@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIColor {
 
-    public struct RGB255 {
+    struct RGB255 {
         public var red: CGFloat
         public var green: CGFloat
         public var blue: CGFloat
@@ -46,7 +46,7 @@ public extension UIColor {
         }
     }
 
-    public var rgb255: RGB255 {
+    var rgb255: RGB255 {
         return RGB255(color: self)
     }
 }

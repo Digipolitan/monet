@@ -5,11 +5,11 @@
     },
     "@fonts": {
         "regular-body": {
-            "name": "Optima-Regular",
+            "name": "PingFangSC-Regular",
             "size": 12
         },
         "bold-action": {
-            "name": "Optima-Bold",
+            "name": "PingFangSC-Semibold",
             "size": 15
         }
     },

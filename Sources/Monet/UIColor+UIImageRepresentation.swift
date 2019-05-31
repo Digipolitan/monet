@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIColor {
 
-    public var imageRepresentation: UIImage? {
+    var imageRepresentation: UIImage? {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         guard let context = UIGraphicsGetCurrentContext() else {
